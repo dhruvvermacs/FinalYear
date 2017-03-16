@@ -1,0 +1,48 @@
+<html>
+<head><title> Change password</title></head>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script language=javascript>
+	function checkfornull()
+	{
+		if (document.f1.oldp.value=="")
+		{
+			alert("Please Enter your old Password");
+			document.f1.oldp.focus();
+		}
+		else if (document.f1.newp.value=="")
+		{
+			alert("New Password can not be empty");
+			document.f1.newp.focus();
+		}
+		else if (document.f1.conp.value=="")
+		{
+			alert("Confirm Password can not be empty");
+			document.f1.conp.focus();
+		}
+		else if(document.f1.newp.value!=document.f1.conp.value)
+		{
+			alert("Check your Confirm Password again");
+			document.f1.newp.value="";
+			document.f1.conp.value="";
+			document.f1.newp.focus();
+		}
+		else
+			document.f1.submit();
+	}
+</script>
+<body >
+<pre>
+<form action="Setnewpassword" method=post name=f1>
+    <center>
+       <h2><font color="maroon"> CHANGE PASSWORD</font></h2>
+            <font color="red">
+                  OLDPASSWORD     :<input type=password class="textbox" name=oldp><br>
+                  NEW PASSWORD    :<Input type=password class="textbox" name=newp><br>
+                  CONFIRMPASSWORD :<input type=password class="textbox"name=conp><br>
+       <input type=button value="CHANGE" name=change onclick=checkfornull()>
+            </font>
+    </center>
+</form>
+</pre>
+</body>
+</html>
